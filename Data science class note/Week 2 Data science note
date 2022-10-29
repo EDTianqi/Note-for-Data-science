@@ -1,0 +1,29 @@
+Week 2 Data science note
+
+Questions asked in ISSUE in GitHub
+
+
+OBJECT ORIENTIED PROGRAMMING AND PROGRAMMING LANGUAGE
+
+Objects: apple, orange, pears
+Class: Fruit
+Property: $name, $color 
+Methods: setName() setcolor() 
+
+Data Science programming languages
+1 Python 2 Scala 3 R 4 SAS 5 SQL 6 Julia
+
+Matrix: 2D, 
+Vector: one line a<- c(1,2,3) must have a c
+
+C<-()
+
+Class: integers, factors (category), numerical(number of species), characters 
+Too see what class is it       str(a)
+
+A<-as.factor/integers/Character(a)
+
+Wd: working direction, the folder that I am working in
+Path: complete path, to the file that I am working in
+
+theme_bw
