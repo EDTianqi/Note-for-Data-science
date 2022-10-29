@@ -1,0 +1,62 @@
+tidyverse is a collection of open source packages for the R programming language introduced by Hadley Wickham and his team that "share an underlying design philosophy, grammar, and data structures" of tidy data.
+
+data wrangling: clean data, reorganize data, uniform data
+pipe: %>%
+loop: many files needs to undertake the same thing, then use a loop
+
+rstudio cheatsheet 
+
+
+in class 
+
+#how many unique species are there?
+species_richness<-length(unique(LPI_species$species))
+species_richness
+
+
+
+
+# QUESTION 1: how many birds species are mointered, what are the most mentioned 3 species?
+#step1. making a subset of bird
+
+bird_species<-filterLPI_species %>%
+ filter(class=="Aves") %>%
+ group_by(Common.Name) %>% #step2. calculating total number of bird species
+ tally() %>% # step 3: Tallying number of different population
+ arrange(desc(n)) %>% # Step4:  using arrange () function to arrange species in decending order
+ slice_head(n=3) # step 5: using slice function to extract 3 most abundant bird species
+bird_species
+
+# QUESTION 2: how many mammals morintored, 3 most abundant
+LPI_mammals<- LPI_species  %>%
+  group_by(Class=="Mammalia") %>%
+  unique(species)
+  
+ LPI_mammal_count <- unique 
+ 
+ 
+ 
+ 
+mammal_species <- unique(LPI_species$Class)
+mammal_species
+
+
+mammal_sp<- LPI_species %>%
+ filter(class =="Mammalia")
+ mammal_sp <-unique(mammal_sp$%Species)
+ mammal_sp_n <- length(unique(mammal_sp$species))
+ 
+ 
+ 
+
+
+
+
+# QUESTION 3:Are birds monitored on average fo longer than mammals across all population?
+#step 1: filtering birds and mammals together 
+ birds_mammals <- LPI_species  %>%
+  filter(Class %in% c("Mammalia", "Aves"))  %>%
+  group_by(Class)  %>%
+  mutate(Year = parse_number(as.charactor(year))) %>%  # remove X
+  mutate(duration = max(year)- min(year)) %>%
+  summarise(mean=mean(duration))
