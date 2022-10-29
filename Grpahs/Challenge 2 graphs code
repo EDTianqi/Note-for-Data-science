@@ -1,0 +1,80 @@
+# liverpool
+data_liverpool <- data %>% 
+  filter(long > -3.3 & long < -3) %>% 
+  filter(lat > 53.3 & lat <53.6) %>% 
+  filter(RCP_Percentile == "rcp26_50" | RCP_Percentile == "rcp45_50" | RCP_Percentile == "rcp85_50")
+
+(plot_liverpool <- ggplot(data_liverpool, aes(x = year, y = sealevel)) # Create a graph using the CurlewDataUK data frame. The column "year" will be on the x-axis and the column "scalepop" on the y-axis.
+  + geom_line(aes(color = RCP_Percentile)) # Add different lines based on column RCP_percentile 
+  +theme_bw() # get rid of the grey background
+  + labs(title = "Sea level rise in Liverpool", x = "Year", y = "Sea Level Rise (cm)")  # Add a title to the graph and labels to the axis
+  +scale_x_continuous(breaks = c(2010,2020,2030,2040,2050,2060,2070,2080,2090,2100))  # show x scale every 10 years
+  +scale_y_continuous(limits = c(0, 60)) # show y scale 0 to 60
+  + theme(axis.text.x = element_text(size =8, angle = 45, vjust = 1, hjust = 1),  # Determine the size, angle of the x axis text     
+          axis.text.y = element_text(size = 8), # Determine the size of the y axis text
+          axis.title = element_text(size = 10, face = "plain"),    # Determine the size of the axis title                     
+          panel.grid = element_blank(),     # get rid of grid                                         
+          legend.text = element_text(size = 6, face = "italic"),    # Determine the size of the legend      
+          legend.title = element_blank(),   # get rid of legend title
+          plot.title = element_text(size = 10, hjust = 0.5, face = "bold")))    # Determine the size and position of the graph title     
+
+
+# Brighton
+data_Brighton <- data %>% 
+  filter(long > -0.59 & long < 0.2) %>% 
+  filter(lat > 49 & lat <52) %>% 
+  filter(RCP_Percentile == "rcp26_50" | RCP_Percentile == "rcp45_50" | RCP_Percentile == "rcp85_50")
+
+(plot_Brighton <- ggplot(data_Brighton, aes(x = year, y = sealevel)) # Create a graph using the CurlewDataUK data frame. The column "year" will be on the x-axis and the column "scalepop" on the y-axis.
+  + geom_line(aes(color = RCP_Percentile)) # Add different lines based on column RCP_percentile 
+  +theme_bw() # get rid of the grey background
+  + labs(title = "Sea level rise in Brighton", x = "Year", y = "Sea Level Rise (cm)")  # Add a title to the graph and labels to the axis
+  +scale_x_continuous(breaks = c(2010,2020,2030,2040,2050,2060,2070,2080,2090,2100))  # show x scale every 10 years
+  +scale_y_continuous(limits = c(0, 60)) # show y scale 0 to 60
+  + theme(axis.text.x = element_text(size =8, angle = 45, vjust = 1, hjust = 1),  # Determine the size, angle of the x axis text     
+          axis.text.y = element_text(size = 8), # Determine the size of the y axis text
+          axis.title = element_text(size = 10, face = "plain"),    # Determine the size of the axis title                     
+          panel.grid = element_blank(),     # get rid of grid                                         
+          legend.text = element_text(size = 6, face = "italic"),    # Determine the size of the legend      
+          legend.title = element_blank(),   # get rid of legend title
+          plot.title = element_text(size = 10, hjust = 0.5, face = "bold")))    # Determine the size and position of the graph title     
+# Cardiff
+data_Cardiff <- data %>% 
+  filter(long > -3.3 & long < -2.9) %>% 
+  filter(lat > 51.3 & lat <51.6) %>% 
+  filter(RCP_Percentile == "rcp26_50" | RCP_Percentile == "rcp45_50" | RCP_Percentile == "rcp85_50")
+
+(plot_Cardiff <- ggplot(data_Cardiff, aes(x = year, y = sealevel)) # Create a graph using the CurlewDataUK data frame. The column "year" will be on the x-axis and the column "scalepop" on the y-axis.
+  + geom_line(aes(color = RCP_Percentile)) # Add different lines based on column RCP_percentile 
+  +theme_bw() # get rid of the grey background
+  + labs(title = "Sea level rise in Cardiff", x = "Year", y = "Sea Level Rise (cm)")  # Add a title to the graph and labels to the axis
+  +scale_x_continuous(breaks = c(2010,2020,2030,2040,2050,2060,2070,2080,2090,2100))  # show x scale every 10 years
+  +scale_y_continuous(limits = c(0, 60)) # show y scale 0 to 60
+  + theme(axis.text.x = element_text(size =8, angle = 45, vjust = 1, hjust = 1),  # Determine the size, angle of the x axis text     
+          axis.text.y = element_text(size = 8), # Determine the size of the y axis text
+          axis.title = element_text(size = 10, face = "plain"),    # Determine the size of the axis title                     
+          panel.grid = element_blank(),     # get rid of grid                                         
+          legend.text = element_text(size = 6, face = "italic"),    # Determine the size of the legend      
+          legend.title = element_blank(),   # get rid of legend title
+          plot.title = element_text(size = 10, hjust = 0.5, face = "bold")))    # Determine the size and position of the graph title     
+
+# Dublin
+data_dublin <- data %>% 
+  filter(long > -6.1 & long < -5.9) %>% 
+  filter(lat > 53.15 & lat <53.65) %>% 
+  filter(RCP_Percentile == "rcp26_50" | RCP_Percentile == "rcp45_50" | RCP_Percentile == "rcp85_50")
+
+(plot_dublin <- ggplot(data_dublin, aes(x = year, y = sealevel)) # Create a graph using the CurlewDataUK data frame. The column "year" will be on the x-axis and the column "scalepop" on the y-axis.
+  + geom_line(aes(color = RCP_Percentile)) # Add different lines based on column RCP_percentile 
+  +theme_bw() # get rid of the grey background
+  + labs(title = "Sea level rise in Dublin", x = "Year", y = "Sea Level Rise (cm)")  # Add a title to the graph and labels to the axis
+  +scale_x_continuous(breaks = c(2010,2020,2030,2040,2050,2060,2070,2080,2090,2100))  # show x scale every 10 years
+  +scale_y_continuous(limits = c(0, 60)) # show y scale 0 to 60
+  + theme(axis.text.x = element_text(size =8, angle = 45, vjust = 1, hjust = 1),  # Determine the size, angle of the x axis text     
+          axis.text.y = element_text(size = 8), # Determine the size of the y axis text
+          axis.title = element_text(size = 10, face = "plain"),    # Determine the size of the axis title                     
+          panel.grid = element_blank(),     # get rid of grid                                         
+          legend.text = element_text(size = 6, face = "italic"),    # Determine the size of the legend      
+          legend.title = element_blank(),   # get rid of legend title
+          plot.title = element_text(size = 10, hjust = 0.5, face = "bold")))    # Determine the size and position of the graph title  
+          
